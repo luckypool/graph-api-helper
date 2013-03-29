@@ -1,0 +1,10 @@
+requires 'URI', '1.60';
+requires 'JSON', '2.27';
+requires 'IO::File', '1.15';
+requires 'Pod::Usage', '1.36';
+requires 'Getopt::Long', '2.38';
+requires 'Data::Dumper', '2.13002';
+requires 'LWP::UserAgent', '6.04';
+requires 'HTTP::Headers', '6.05';
+requires 'HTTP::Request', '6.00';
+requires 'HTTP::Request::Common', '6.04';
