@@ -1,0 +1,5 @@
+{
+    "client_id"     : "consumer_key",
+    "client_secret" : "consumer_secret",
+    "redirect_uri"  : "http://mixi.jp/connect_authorize_success.html"
+}
