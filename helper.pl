@@ -33,7 +33,7 @@ sub main {
             %{$options->{client}},
             grant_type=>'authorization_code',
             code => $options->{code},
-        });
+        },$options);
     }
     elsif(defined $options->{token}){
         pod2usage(1) unless $options->{client};
@@ -51,7 +51,7 @@ sub access_graph_api_with_token {
         %{$options->{client}},
         grant_type => 'refresh_token',
         refresh_token => $options->{token}->{refresh_token},
-    });
+    }, $options);
     my $access_token = $token->{access_token};
     my $endpoint = $options->{endpoint};
 
@@ -70,14 +70,15 @@ sub access_graph_api_with_token {
 }
 
 sub get_access_token {
-    my $client = shift;
+    my ($client, $options) = @_;
     my $ua = LWP::UserAgent->new;
-    my $res = $ua->post(TOKEN_URL(), $client);
+    my $res = $ua->post($options->{debug_env}->{token_url} || TOKEN_URL(), $client);
     my $json = $res->decoded_content;
     # say '[REQUEST]:';
     # say $res->request->content;
     # say '[RESPONSE]:';
     # say $json;
+    die unless $res->code == 200;
     my $save_to_path = "./token/$client->{client_id}.json";
     my $file = IO::File->new("> $save_to_path") or die;
     print $file "$json";
@@ -92,7 +93,7 @@ sub show_authorize_url {
         client_id => $options->{client}->{client_id},
         scope => join ' ', @{$options->{scope}},
     ];
-    my $uri = URI->new(AUTH_URL());
+    my $uri = URI->new($options->{debug_env}->{auth_url} || AUTH_URL());
     $uri->query_form($content);
     say $uri->as_string;
 }
@@ -113,6 +114,10 @@ sub get_option_href {
         'scope=s' => sub {
             my ($name, $value) = @_;
             $options->{scope} = __json_to_href($value);
+        },
+        'debug_env=s' => sub {
+            my ($name, $value) = @_;
+            $options->{debug_env} = __json_to_href($value);
         }
     ) or pod2usage(1);
     return $options;
