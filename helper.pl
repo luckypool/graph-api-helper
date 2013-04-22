@@ -16,8 +16,8 @@ use LWP::UserAgent;
 use Data::Dumper;
 
 use constant {
-    AUTH  => 'https://mixi.jp/connect_authorize.pl',
-    TOKEN => 'https://secure.mixi-platform.com/2/token',
+    AUTH_URL  => 'https://mixi.jp/connect_authorize.pl',
+    TOKEN_URL => 'https://secure.mixi-platform.com/2/token',
 };
 
 sub main {
@@ -27,21 +27,22 @@ sub main {
         pod2usage(1) unless $options->{client};
         return show_authorize_url($options);
     }
-    if(defined $options->{code}){
+    elsif(defined $options->{code}){
         pod2usage(1) unless $options->{client};
-        return get_access_token({
+        get_access_token({
             %{$options->{client}},
             grant_type=>'authorization_code',
             code => $options->{code},
         });
     }
-    if(defined $options->{token}){
+    elsif(defined $options->{token}){
         pod2usage(1) unless $options->{client};
         pod2usage(1) unless $options->{endpoint};
-        return access_graph_api_with_token($options);
+        access_graph_api_with_token($options);
     }
-
-    pod2usage(1);
+    else {
+        pod2usage(1);
+    }
 }
 
 sub access_graph_api_with_token {
@@ -58,19 +59,29 @@ sub access_graph_api_with_token {
     $ua->default_header("Authorization"=>"$token->{token_type} $token->{access_token}");
     my $res = $ua->get($endpoint);
     my $json = $res->decoded_content;
-    warn Data::Dumper::Dumper JSON::decode_json($json);
+    # say '[REQUEST]:';
+    # say $res->request->headers->as_string;
+    # say $res->request->content;
+    # say '[RESPONSE]:';
+    my $save_to_path = "./data/$options->{client}->{client_id}.json";
+    my $file = IO::File->new("> $save_to_path") or die;
+    print $file "$json";
+    say $json;
 }
 
 sub get_access_token {
     my $client = shift;
     my $ua = LWP::UserAgent->new;
-    my $res = $ua->post(TOKEN(), $client);
+    my $res = $ua->post(TOKEN_URL(), $client);
     my $json = $res->decoded_content;
+    # say '[REQUEST]:';
+    # say $res->request->content;
+    # say '[RESPONSE]:';
+    # say $json;
     my $save_to_path = "./token/$client->{client_id}.json";
     my $file = IO::File->new("> $save_to_path") or die;
     print $file "$json";
-    $file->close;
-    say "save to $save_to_path";
+    # say "save to $save_to_path";
     return JSON::decode_json($json);
 }
 
@@ -81,7 +92,7 @@ sub show_authorize_url {
         client_id => $options->{client}->{client_id},
         scope => join ' ', @{$options->{scope}},
     ];
-    my $uri = URI->new(AUTH());
+    my $uri = URI->new(AUTH_URL());
     $uri->query_form($content);
     say $uri->as_string;
 }
@@ -146,14 +157,14 @@ conf/client.json に下記情報をいれて実行する
  perl ./helper.pl [options]
 
  options:
-    --client     tokenをとるのに必要なやつ(client_id 等)
+    --client    credential info (formatted json)
     --scope     scope (ex. r_profile)
     --code      authorization_code
     --token     access_token, refresh_token
     --endpoint  endpoint
 
  ex.) authorization_code を取得する url を生成
- perl helper.pl --client conf/client.json --scope conf/scope.json
+ perl helper.pl --client conf/client.json --scope scope/scope.json
 
  ex.) access token を取得する場合
  perl helper.pl --client conf/client.json --code [code]

@@ -17,7 +17,7 @@ carton install
  perl ./helper.pl [options]
 
  options:
-    --client    tokenをとるのに必要なやつ(client_id 等)
+    --client    credential info (formatted json)
     --scope     scope (ex. r_profile)
     --code      authorization_code
     --token     access_token, refresh_token
@@ -29,7 +29,7 @@ carton install
 - authorization_code を取得する url を生成
 
 ```bash
-perl helper.pl --client conf/client.json --scope conf/scope.json
+perl helper.pl --client conf/client.json --scope scope/scope.json
 ```
 
 - access token を取得する場合（tokenディレクトリ以下に出力されます）
