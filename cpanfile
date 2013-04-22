@@ -4,6 +4,7 @@ requires 'IO::File', '1.15';
 requires 'Pod::Usage', '1.36';
 requires 'Getopt::Long', '2.38';
 requires 'Data::Dumper', '2.13002';
+requires 'LWP::Protocol::https', '6.03';
 requires 'LWP::UserAgent', '6.04';
 requires 'HTTP::Headers', '6.05';
 requires 'HTTP::Request', '6.00';
