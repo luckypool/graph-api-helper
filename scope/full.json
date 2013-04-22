@@ -1,0 +1,18 @@
+[
+    "r_profile",
+    "w_profile",
+    "rw_friend_request",
+    "r_voice",
+    "w_voice",
+    "r_updates",
+    "r_share",
+    "w_share",
+    "r_photo",
+    "w_photo",
+    "r_message",
+    "w_message",
+    "r_diary",
+    "w_diary",
+    "r_checkin",
+    "w_checkin"
+]
