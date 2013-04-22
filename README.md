@@ -32,7 +32,7 @@ carton install
 perl helper.pl --client conf/client.json --scope scope/scope.json
 ```
 
-- access token を取得する場合（tokenディレクトリ以下に出力されます）
+- access token を取得する場合（tokenディレクトリ以下にjsonファイルとして出力されます）
 
 ```bash
 perl helper.pl --client conf/client.json --code [code]
@@ -41,15 +41,14 @@ perl helper.pl --client conf/client.json --code [code]
 - ex.) access token を利用してendpointをたたく
 
 ```bash
-perl helper.pl --client conf/client.json --token token/info.json \
+perl helper.pl --client conf/client.json --token token/token.json \
 --endpoint http://api.mixi-platform.com/2/people/@me/@self?fields=@all
 ````
 
 ### config files
 
-- conf/client.json
-
 ```javascript
+// conf/client.json
 {
   "client_id"     : "consumer_key",
   "client_secret" : "consumer_secret",
@@ -57,9 +56,8 @@ perl helper.pl --client conf/client.json --token token/info.json \
 }
 ```
 
-- conf/scope.json
-
 ```javascript
+// scope/scope.json
 [
   "r_profile"
 ]
