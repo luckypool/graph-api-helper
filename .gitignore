@@ -1,3 +1,7 @@
 local
 .carton
 carton.lock
+token
+data
+conf/production_client.json
+conf/debug_client.json
