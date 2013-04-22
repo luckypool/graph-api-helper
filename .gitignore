@@ -5,3 +5,4 @@ token
 data
 conf/production_client.json
 conf/debug_client.json
+debug
