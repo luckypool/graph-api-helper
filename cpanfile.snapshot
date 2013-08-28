@@ -1,0 +1,234 @@
+# carton snapshot format: version 1.0
+DISTRIBUTIONS
+  Class-Accessor-Lite-0.05
+    pathname: K/KA/KAZUHO/Class-Accessor-Lite-0.05.tar.gz
+    provides:
+      Class::Accessor::Lite 0.05
+    requirements:
+      ExtUtils::MakeMaker 6.42
+  Encode-Locale-1.03
+    pathname: G/GA/GAAS/Encode-Locale-1.03.tar.gz
+    provides:
+      Encode::Locale 1.03
+    requirements:
+      Encode 2
+      Encode::Alias 0
+      ExtUtils::MakeMaker 0
+      Test 0
+      perl 5.008
+  Furl-2.19
+    pathname: T/TO/TOKUHIROM/Furl-2.19.tar.gz
+    provides:
+      Furl 2.19
+      Furl::ConnectionCache undef
+      Furl::HTTP 2.19
+      Furl::Headers undef
+      Furl::Request undef
+      Furl::Response undef
+      Furl::ZlibStream undef
+    requirements:
+      CPAN::Meta 0
+      CPAN::Meta::Prereqs 0
+      Class::Accessor::Lite 0
+      Encode 0
+      ExtUtils::CBuilder 0
+      HTTP::Parser::XS 0.11
+      MIME::Base64 0
+      Module::Build 0.38
+      Mozilla::CA 0
+      Scalar::Util 0
+      Socket 0
+      Time::HiRes 0
+      perl 5.008001
+  HTTP-Date-6.02
+    pathname: G/GA/GAAS/HTTP-Date-6.02.tar.gz
+    provides:
+      HTTP::Date 6.02
+    requirements:
+      ExtUtils::MakeMaker 0
+      Time::Local 0
+      perl 5.006002
+  HTTP-Message-6.06
+    pathname: G/GA/GAAS/HTTP-Message-6.06.tar.gz
+    provides:
+      HTTP::Config 6.00
+      HTTP::Headers 6.05
+      HTTP::Headers::Auth 6.00
+      HTTP::Headers::ETag 6.00
+      HTTP::Headers::Util 6.03
+      HTTP::Message 6.06
+      HTTP::Request 6.00
+      HTTP::Request::Common 6.04
+      HTTP::Response 6.04
+      HTTP::Status 6.03
+    requirements:
+      Compress::Raw::Zlib 0
+      Encode 2.21
+      Encode::Locale 1
+      ExtUtils::MakeMaker 0
+      HTTP::Date 6
+      IO::Compress::Bzip2 2.021
+      IO::Compress::Deflate 0
+      IO::Compress::Gzip 0
+      IO::HTML 0
+      IO::Uncompress::Bunzip2 2.021
+      IO::Uncompress::Gunzip 0
+      IO::Uncompress::Inflate 0
+      IO::Uncompress::RawInflate 0
+      LWP::MediaTypes 6
+      MIME::Base64 2.1
+      MIME::QuotedPrint 0
+      URI 1.10
+      perl 5.008001
+  HTTP-Parser-XS-0.16
+    pathname: K/KA/KAZUHO/HTTP-Parser-XS-0.16.tar.gz
+    provides:
+      HTTP::Parser::XS 0.16
+      HTTP::Parser::XS::PP undef
+    requirements:
+      ExtUtils::MakeMaker 6.42
+      Test::More 0.96
+  IO-HTML-1.00
+    pathname: C/CJ/CJM/IO-HTML-1.00.tar.gz
+    provides:
+      IO::HTML 1.00
+    requirements:
+      Carp 0
+      Encode 2.10
+      Exporter 5.57
+      ExtUtils::MakeMaker 6.30
+      File::Temp 0
+      Scalar::Util 0
+      Test::More 0.88
+  IO-Socket-SSL-1.953
+    pathname: S/SU/SULLR/IO-Socket-SSL-1.953.tar.gz
+    provides:
+      IO::Socket::SSL 1.953
+      IO::Socket::SSL::Intercept 1.93
+      IO::Socket::SSL::SSL_Context 1.953
+      IO::Socket::SSL::SSL_HANDLE 1.953
+      IO::Socket::SSL::Session_Cache 1.953
+      IO::Socket::SSL::Utils 0.01
+    requirements:
+      ExtUtils::MakeMaker 0
+      Net::SSLeay 1.46
+      Scalar::Util 0
+  JSON-2.59
+    pathname: M/MA/MAKAMAKA/JSON-2.59.tar.gz
+    provides:
+      JSON 2.59
+      JSON::Backend::PP 2.59
+      JSON::Boolean 2.59
+      JSON::backportPP::Boolean 2.27202
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test::More 0
+  JSON-XS-2.34
+    pathname: M/ML/MLEHMANN/JSON-XS-2.34.tar.gz
+    provides:
+      JSON::XS 2.34
+      JSON::XS::Boolean 2.34
+    requirements:
+      ExtUtils::MakeMaker 0
+      common::sense 0
+  LWP-MediaTypes-6.02
+    pathname: G/GA/GAAS/LWP-MediaTypes-6.02.tar.gz
+    provides:
+      LWP::MediaTypes 6.02
+    requirements:
+      ExtUtils::MakeMaker 0
+      perl 5.006002
+  Mozilla-CA-20130114
+    pathname: A/AB/ABH/Mozilla-CA-20130114.tar.gz
+    provides:
+      Mozilla::CA 20130114
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test 0
+      perl 5.006
+  Net-SSLeay-1.55
+    pathname: M/MI/MIKEM/Net-SSLeay-1.55.tar.gz
+    provides:
+      Net::SSLeay 1.55
+      Net::SSLeay::Handle 0.61
+    requirements:
+      ExtUtils::MakeMaker 6.36
+      MIME::Base64 0
+      Test::More 0.60_01
+      perl 5.005
+  URI-1.60
+    pathname: G/GA/GAAS/URI-1.60.tar.gz
+    provides:
+      URI 1.60
+      URI::Escape 3.31
+      URI::Heuristic 4.20
+      URI::IRI undef
+      URI::QueryParam undef
+      URI::Split undef
+      URI::URL 5.04
+      URI::WithBase 2.20
+      URI::_foreign undef
+      URI::_generic undef
+      URI::_idna undef
+      URI::_ldap 1.12
+      URI::_login undef
+      URI::_punycode 0.04
+      URI::_query undef
+      URI::_segment undef
+      URI::_server undef
+      URI::_userpass undef
+      URI::data undef
+      URI::file 4.21
+      URI::file::Base undef
+      URI::file::FAT undef
+      URI::file::Mac undef
+      URI::file::OS2 undef
+      URI::file::QNX undef
+      URI::file::Unix undef
+      URI::file::Win32 undef
+      URI::ftp undef
+      URI::gopher undef
+      URI::http undef
+      URI::https undef
+      URI::ldap 1.12
+      URI::ldapi undef
+      URI::ldaps undef
+      URI::mailto undef
+      URI::mms undef
+      URI::news undef
+      URI::nntp undef
+      URI::pop undef
+      URI::rlogin undef
+      URI::rsync undef
+      URI::rtsp undef
+      URI::rtspu undef
+      URI::sip 0.11
+      URI::sips undef
+      URI::snews undef
+      URI::ssh undef
+      URI::telnet undef
+      URI::tn3270 undef
+      URI::urn undef
+      URI::urn::isbn undef
+      URI::urn::oid undef
+    requirements:
+      ExtUtils::MakeMaker 0
+      MIME::Base64 2
+      Test 0
+      Test::More 0
+      perl 5.008001
+  YAML-LibYAML-0.41
+    pathname: I/IN/INGY/YAML-LibYAML-0.41.tar.gz
+    provides:
+      YAML::LibYAML 0.18
+      YAML::XS 0.41
+      YAML::XS::LibYAML undef
+    requirements:
+      ExtUtils::MakeMaker 6.59
+      perl 5.008001
+  common-sense-3.6
+    pathname: M/ML/MLEHMANN/common-sense-3.6.tar.gz
+    provides:
+      common::sense 3.6
+    requirements:
+      ExtUtils::MakeMaker 0
