@@ -13,7 +13,7 @@ carton install
 
 ### synopsis
 
-書くスクリプトのPODを参照ください。
+スクリプトのPODを参照ください。
 
 
 
