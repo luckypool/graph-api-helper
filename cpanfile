@@ -1,11 +1,13 @@
-requires 'URI', '1.60';
-requires 'JSON', '2.27';
-requires 'IO::File', '1.15';
-requires 'Pod::Usage', '1.36';
-requires 'Getopt::Long', '2.38';
-requires 'Data::Dumper', '2.13002';
-requires 'LWP::Protocol::https', '6.03';
-requires 'LWP::UserAgent', '6.04';
-requires 'HTTP::Headers', '6.05';
-requires 'HTTP::Request', '6.00';
-requires 'HTTP::Request::Common', '6.04';
+requires 'Data::Dumper';
+requires 'Furl';
+requires 'Getopt::Long';
+requires 'HTTP::Request';
+requires 'IO::File';
+requires 'IO::Socket::SSL';
+requires 'JSON';
+requires 'JSON::XS';
+requires 'Pod::Usage';
+requires 'URI';
+requires 'YAML::XS';
+requires 'common::sense';
+
